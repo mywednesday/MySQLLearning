@@ -27,3 +27,16 @@ update education.school set name="衡水中学" where id = (select id from educa
 
 SELECT * FROM education.school;
 ```
+5. Advanced   top、limit、in、between、like
+```
+SELECT * FROM education.school;
+SELECT * FROM education.school limit 3;
+SELECT * FROM education.school order by name limit 3;
+
+SELECT * FROM education.school where id in (1,3);
+SELECT * FROM education.school where id between 1 and 101;
+SELECT * FROM education.school where id > 1 and id < 101;
+
+SELECT * FROM education.school where name like "%学";
+SELECT * FROM education.school where name like "%水%";
+```
