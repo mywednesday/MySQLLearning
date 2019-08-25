@@ -11,3 +11,19 @@
   * insert即可以指定也可以不指定Key值，但是不能指定已存在的Key；
   * insert时不指定key的值，新增记录的Key从表中最大的Key值开始自增长；
   * 不能删除数据库中有自动增长的主键的表，其原因是这个表与其它表之间建立有“关系”。必须将“关系”删除后才能删除表；
+```
+insert education.school (name)value("衡水中学");
+insert education.school (id, name)value(1, "衡水中学");
+insert education.school (id, name)value(5, "衡水中学");
+
+
+delete from education.school where id=5;
+
+select id from education.school where name="衡水中学";
+
+update education.school set name="sadfsf" where id = 2;
+
+update education.school set name="衡水中学" where id = (select id from education.school where name="sadfsf");		-- 安全模式的问题 
+
+SELECT * FROM education.school;
+```
